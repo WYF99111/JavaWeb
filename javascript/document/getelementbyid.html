@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function onclickFun() {
+            //操作标签时先获取标签对象
+            var usernameObj=document.getElementById("username");
+            var usernameText=usernameObj.value;
+            var patt=/^\w{5,12}$/;
+            //test()匹配返回true，否则为false
+            var usernameSpanObj=document.getElementById("usernameSpan");
+            //innerHtml 表示其实标签和结束标签的内容
+            //innerHtml 该属性可读可写
+            //alert(usernameSpanObj.innerHTML);
+            if(patt.test(usernameText)){
+                usernameSpanObj.innerHTML="<img src=\"right.png\" width=\"15\" height=\"12\">"
+            }
+            else{
+                usernameSpanObj.innerHTML="<img src=\"wrong.png\" width=\"15\" height=\"12\">"
+            }
+        }
+
+    </script>
+</head>
+<body>
+    用户名：<input type="text" id="username" value="wyf"/>
+    <span id="usernameSpan" style="color: red">
+        <img src="right.png" width="15" height="12">
+    </span>
+    <button onclick="onclickFun()">校验</button>
+</body>
+</html>

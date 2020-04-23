@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function onchangeFun() {
+            alert("国家已经改变了");
+        }
+        window.onload=function () {
+            //1 获取标签对象
+            var selObj = document.getElementById("select01");
+            alert(selObj);
+            selObj.onchange=function () {
+                //2 通过标签对象.事件名=function(){};
+                alert("性别已经改变了");
+            }
+        }
+    </script>
+</head>
+<body>
+    请选择国家：
+<!-- 静态注册onchange事件 -->
+    <select onchange="onchangeFun();">
+        <option>--国家--</option>
+        <option>中国</option>
+        <option>美国</option>
+        <option>日本</option>
+    </select>
+    请选择国家：
+    <!-- 动态注册onchange事件 -->
+    <select id="select01">
+        <option>--性别--</option>
+        <option>男</option>
+        <option>女</option>
+    </select>
+</body>
+</html>
