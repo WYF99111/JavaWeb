@@ -45,7 +45,7 @@
 			$(document).ready(function(){
 				//1.选择 含有文本 'di' 的 div 元素
 				$("#btn1").click(function(){
-					$().css("background", "#bbffaa");
+					$("div:contains('di')").css("background", "#bbffaa");
 				});
 
 				//2.选择不包含子元素(或者文本元素) 的 div 空元素
